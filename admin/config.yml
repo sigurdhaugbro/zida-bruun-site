@@ -1,0 +1,66 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "content/settings.json"
+        label: "Site Settings"
+        name: "settings"
+        fields:
+          - { label: "Artist Name", name: "artistName", widget: "string" }
+          - { label: "Tagline (shown under name on homepage)", name: "tagline", widget: "string" }
+          - { label: "Portrait Photo", name: "portrait", widget: "image", required: false }
+          - { label: "Bio Introduction", name: "bio", widget: "text" }
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            summary: "{{fields.year}} — {{fields.detail}}"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Detail", name: "detail", widget: "string" }
+          - label: "Selected Exhibitions"
+            name: "exhibitions"
+            widget: "list"
+            summary: "{{fields.year}} — {{fields.detail}}"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Detail", name: "detail", widget: "string" }
+          - label: "Bibliography"
+            name: "bibliography"
+            widget: "list"
+            summary: "{{fields.year}} — {{fields.detail}}"
+            required: false
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Detail", name: "detail", widget: "string" }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - { label: "Phone", name: "phone", widget: "string", required: false }
+          - { label: "Instagram Link", name: "instagram", widget: "string", required: false }
+          - { label: "Facebook Link", name: "facebook", widget: "string", required: false }
+          - { label: "Other Link Label", name: "otherLinkLabel", widget: "string", required: false }
+          - { label: "Other Link URL", name: "otherLink", widget: "string", required: false }
+
+  - name: "artworks"
+    label: "Artworks"
+    files:
+      - file: "content/artworks.json"
+        label: "Artworks"
+        name: "artworks"
+        fields:
+          - label: "Artworks"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.price}} kr"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Price (NOK)", name: "price", widget: "number", value_type: "int" }
+              - { label: "Marked as Sold", name: "sold", widget: "boolean", default: false }
+              - { label: "Medium / Dimensions", name: "medium", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Image", name: "image", widget: "image" }
