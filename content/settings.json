@@ -1,28 +1,8 @@
 {
   "artistName": "Zida Bruun",
-  "tagline": "Paintings shaped by light, memory, and the Norwegian coastline.",
-  "portrait": "/images/uploads/portrait-placeholder.svg",
   "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "education": [
     { "year": "2019", "detail": "Master of Fine Arts, Lorem Ipsum Academy of Art" },
-    { "year": "2016", "detail": "Bachelor of Fine Arts, Lorem Ipsum Academy of Art" },
-    { "year": "2013", "detail": "Foundation Course, Dolor Sit School of Art" }
-  ],
-  "exhibitions": [
-    { "year": "2025", "detail": "Lorem Ipsum, solo show at Consectetur Gallery, Oslo, NO" },
-    { "year": "2024", "detail": "Dolor Sit Amet, group exhibition, Adipiscing Kunsthall, Bergen, NO" },
-    { "year": "2023", "detail": "Ut Enim Ad Minim, Sed Do Eiusmod Gallery, Trondheim, NO" },
-    { "year": "2022", "detail": "Veniam Quis, graduate show, Lorem Ipsum Academy of Art" },
-    { "year": "2021", "detail": "Nostrud Exercitation, Ullamco Art Space, Stavanger, NO" }
-  ],
-  "bibliography": [
-    { "year": "2024", "detail": "\"Lorem Ipsum Dolor,\" Consectetur Art Journal" },
-    { "year": "2022", "detail": "\"Sed Do Eiusmod Tempor,\" Adipiscing Magazine" }
-  ],
-  "email": "zida@zidabruun.no",
-  "phone": "+47 912 34 567",
-  "instagram": "https://instagram.com/zidabruun",
-  "facebook": "https://facebook.com/zidabruun",
-  "otherLinkLabel": "",
-  "otherLink": ""
+    { "year": "2016", "detail": "Bachelor of Fine Arts, Lorem Ipsum Academy of Art" }
+  ]
 }

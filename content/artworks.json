@@ -1,76 +1,7 @@
 {
   "items": [
-    {
-      "title": "Starry Night",
-      "price": 42000,
-      "sold": false,
-      "medium": "Oil on canvas, 73 × 92 cm",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg?width=1000"
-    },
-    {
-      "title": "The Great Wave",
-      "price": 18500,
-      "sold": true,
-      "medium": "Woodblock print, 26 × 38 cm",
-      "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Wave_off_Kanagawa.jpg?width=1000"
-    },
-    {
-      "title": "Water Lilies",
-      "price": 65000,
-      "sold": false,
-      "medium": "Oil on canvas, 89 × 92 cm",
-      "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Water_Lilies_-_1906,_Ryerson.jpg?width=1000"
-    },
-    {
-      "title": "The Kiss",
-      "price": 89000,
-      "sold": false,
-      "medium": "Oil and gold leaf on canvas, 180 × 180 cm",
-      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Kiss_by_Gustav_Klimt.jpg?width=1000"
-    },
-    {
-      "title": "The Scream",
-      "price": 31000,
-      "sold": true,
-      "medium": "Tempera and pastel on cardboard, 91 × 73 cm",
-      "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Scream.jpg?width=1000"
-    },
-    {
-      "title": "Girl with a Pearl Earring",
-      "price": 54000,
-      "sold": false,
-      "medium": "Oil on canvas, 44.5 × 39 cm",
-      "description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Johannes_Vermeer_-_Girl_with_a_Pearl_Earring_-_WGA24666.jpg?width=1000"
-    },
-    {
-      "title": "The Fighting Temeraire",
-      "price": 27500,
-      "sold": false,
-      "medium": "Oil on canvas, 91 × 122 cm",
-      "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fighting_Temeraire.jpg?width=1000"
-    },
-    {
-      "title": "Basket of Apples",
-      "price": 15900,
-      "sold": true,
-      "medium": "Oil on canvas, 65 × 80 cm",
-      "description": "Et harum quidem rerum facilis est et expedita distinctio, nam libero tempore cum soluta nobis.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le_panier_de_pommes,_par_Paul_C%C3%A9zanne.jpg?width=1000"
-    },
-    {
-      "title": "Paris Street; Rainy Day",
-      "price": 73000,
-      "sold": false,
-      "medium": "Oil on canvas, 212 × 276 cm",
-      "description": "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_Street%3B_Rainy_Day.jpg?width=1000"
-    }
+    { "title": "Untitled I", "year": "2026", "medium": "Plaster, dimensions variable", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "image": "" },
+    { "title": "Untitled II", "year": "2025", "medium": "Mixed media on panel, 120 × 240 cm", "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.", "image": "" },
+    { "title": "Untitled III", "year": "2025", "medium": "Plaster, dimensions variable", "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse.", "image": "" }
   ]
 }
