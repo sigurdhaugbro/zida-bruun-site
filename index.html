@@ -124,6 +124,20 @@ function esc(str){
   if(!str) return '';
   return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+// Minimal markdown: **bold**, *italic*/_italic_, for a single line (titles etc.)
+function mdInline(str){
+  let out = esc(str);
+  out = out.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  out = out.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  out = out.replace(/_(.+?)_/g, '<em>$1</em>');
+  return out;
+}
+// Minimal markdown for multi-paragraph fields (bio, about, description)
+function mdBlock(str){
+  if(!str) return '';
+  const paragraphs = String(str).split(/\n\s*\n/).filter(p => p.trim());
+  return paragraphs.map(p => `<p>${mdInline(p.trim().replace(/\n/g, ' '))}</p>`).join('');
+}
 function slugify(str){
   return String(str).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
 }
@@ -170,7 +184,7 @@ function buildAllSections(){
     const imgs = (a.images && a.images.length) ? a.images : (a.image ? [a.image] : []);
     html += `<div class="work-entry">
       <div class="work-images">${imgs.map(src => `<div class="work-img"><img src="${esc(src)}"></div>`).join('')}</div>
-      <p class="work-title">${esc(a.title)}</p>
+      <p class="work-title">${mdInline(a.title)}</p>
       <p class="work-sub">${esc(fmtWithYear(a.medium, a.year))}</p>
     </div>`;
   });
@@ -181,15 +195,15 @@ function buildAllSections(){
     const id = 'exhibition-' + slugify(e.title);
     html += `<div class="exh-entry">
       <a href="#${id}" onclick="goTo('${id}')" class="exh-thumb">${e.image ? `<img src="${esc(e.image)}">` : ''}</a>
-      <a class="raw-title" href="#${id}" onclick="goTo('${id}')">${esc(e.title)}</a>, ${esc(e.year)}, ${esc(e.venue)}
+      <a class="raw-title" href="#${id}" onclick="goTo('${id}')">${mdInline(e.title)}</a>, ${esc(e.year)}, ${esc(e.venue)}
     </div>`;
   });
   html += `</div></section>`;
 
   html += `<section id="page-about" class="hidden"><div class="about-wrap">
-    <p>${esc(SETTINGS.bio)}</p>`;
+    ${mdBlock(SETTINGS.bio)}`;
   if(SETTINGS.aboutText){
-    html += `<div class="cv-heading">About</div><p>${esc(SETTINGS.aboutText)}</p>`;
+    html += `<div class="cv-heading">About</div>${mdBlock(SETTINGS.aboutText)}`;
   }
   if(SETTINGS.education && SETTINGS.education.length){
     html += `<div class="cv-heading">Education</div>`;
@@ -204,11 +218,11 @@ function buildAllSections(){
   EXHIBITIONS.forEach(e => {
     const id = 'exhibition-' + slugify(e.title);
     html += `<section id="page-${id}" class="hidden"><div class="detail-wrap">
-      <p class="exh-detail-title">${esc(e.workTitle || e.title)}</p>
+      <p class="exh-detail-title">${mdInline(e.workTitle || e.title)}</p>
       <p class="exh-detail-line">${esc(e.year)}</p>
       <p class="exh-detail-line">${esc(e.venue)}</p>
       ${e.medium ? `<p class="exh-detail-line">${esc(e.medium)}</p>` : ''}
-      ${e.description ? `<p class="detail-desc">${esc(e.description)}</p>` : ''}
+      ${e.description ? mdBlock(e.description).replace('<p>','<p class="detail-desc">') : ''}
       <div class="scroll-images">${e.image ? `<div class="scroll-img"><img src="${esc(e.image)}"></div>` : ''}</div>
       <a class="back-link" href="#exhibitions" onclick="goTo('exhibitions')">back to exhibitions</a>
     </div></section>`;
