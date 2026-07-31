@@ -1,7 +1,30 @@
 {
   "items": [
-    { "title": "Untitled I", "year": "2026", "medium": "Plaster, dimensions variable", "images": ["/images/uploads/otters-installation.jpg", "/images/uploads/wall-piece.jpg"] },
-    { "title": "Untitled II", "year": "2025", "medium": "Mixed media on panel, 120 × 240 cm", "images": ["/images/uploads/wall-piece.jpg"] },
-    { "title": "Untitled III", "year": "2025", "medium": "Plaster, dimensions variable", "images": ["/images/uploads/otters-installation.jpg", "/images/uploads/wall-piece.jpg"] }
+    {
+      "title": "Felt cute",
+      "year": "2026",
+      "medium": "Plaster, dimensions variable",
+      "images": [
+        "/images/uploads/dsc_6040horisontcrop.jpg",
+        "/images/uploads/wall-piece.jpg"
+      ]
+    },
+    {
+      "title": "Untitled II",
+      "year": "2025",
+      "medium": "Mixed media on panel, 120 × 240 cm",
+      "images": [
+        "/images/uploads/wall-piece.jpg"
+      ]
+    },
+    {
+      "title": "Untitled III",
+      "year": "2025",
+      "medium": "Plaster, dimensions variable",
+      "images": [
+        "/images/uploads/otters-installation.jpg",
+        "/images/uploads/wall-piece.jpg"
+      ]
+    }
   ]
 }
