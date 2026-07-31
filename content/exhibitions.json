@@ -6,8 +6,9 @@
       "venue": "Kunstnernes Hus",
       "year": "2026",
       "medium": "18 concrete casts of a taxidermied otter",
+      "dimensions": "",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "image": "/images/uploads/otters-installation.jpg"
+      "images": ["/images/uploads/otters-installation.jpg"]
     },
     {
       "title": "Everybody should have at least one eye closed",
@@ -15,8 +16,9 @@
       "venue": "Pachinko",
       "year": "2026",
       "medium": "Mixed media on panel",
+      "dimensions": "",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "image": "/images/uploads/wall-piece.jpg"
+      "images": ["/images/uploads/wall-piece.jpg"]
     },
     {
       "title": "Start´19",
@@ -24,8 +26,9 @@
       "venue": "The Sculpture Workshop of the The Danish National Museum",
       "year": "2019",
       "medium": "Dried rubber tree leaves, thread of silk and steel ",
+      "dimensions": "",
       "description": "Shown at the 2019 edition of the annual exhibition by Sculpture Network, at the sculpture workshop of the The Danish National Museum.",
-      "image": "/images/uploads/metamorfose_5.jpg"
+      "images": ["/images/uploads/metamorfose_5.jpg"]
     },
     {
       "title": "Labyrinth",
@@ -33,24 +36,28 @@
       "venue": "Bergen Art Academy",
       "year": "2021",
       "medium": "Digital print on paper",
-      "image": "/images/uploads/stairwaytle-8.jpg",
-      "description": "Part of the annual exhibition at Bergen Art Academy"
+      "dimensions": "",
+      "description": "Part of the annual exhibition at Bergen Art Academy",
+      "images": ["/images/uploads/stairwaytle-8.jpg"]
     },
     {
       "title": "*It’s lying there along with the tree, maybe we’ll see him later*",
       "workTitle": "*It’s lying there along with the tree, maybe we’ll see him later*",
       "venue": "Tag Team Studio and Galleri Flig",
       "year": "2021",
-      "image": "/images/uploads/tbr_tag-team_galleri-flig_21.jpg",
       "medium": "Various concrete types, charcoal on paper, construction wood, construction foil, water and leaves from fountains in Bergen",
-      "description": "Duo project made together with Line Rolf, shown at Tag Team Studio and Galleri Flig."
+      "dimensions": "",
+      "description": "Duo project made together with Line Rolf, shown at Tag Team Studio and Galleri Flig.",
+      "images": ["/images/uploads/tbr_tag-team_galleri-flig_21.jpg"]
     },
     {
       "title": "Melange",
       "workTitle": "Without any resistance they spin, they should all just spin, exposing the ground, quick turn in the air with your shoes on",
       "venue": "Bergen Art Academy",
       "year": "2022",
-      "medium": "Sound piece, nylon strap, bricks, paraffin wax and various found materials"
+      "medium": "Sound piece, nylon strap, bricks, paraffin wax and various found materials",
+      "dimensions": "",
+      "images": []
     }
   ]
 }

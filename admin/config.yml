@@ -36,14 +36,14 @@ collections:
             summary: "{{fields.year}} — {{fields.detail}}"
             fields:
               - { label: "Year", name: "year", widget: "string" }
-              - { label: "Detail", name: "detail", widget: "string" }
+              - { label: "Detail", name: "detail", widget: "string", hint: "To italicize a word, wrap it in asterisks, e.g. *Otters*" }
           - label: "Exhibitions and Activities"
             name: "exhibitionsActivities"
             widget: "list"
             summary: "{{fields.year}} — {{fields.detail}}"
             fields:
               - { label: "Year", name: "year", widget: "string" }
-              - { label: "Detail", name: "detail", widget: "string" }
+              - { label: "Detail", name: "detail", widget: "string", hint: "To italicize a word, wrap it in asterisks, e.g. *Otters*" }
 
   - name: "artworks"
     label: "Selected Works"
@@ -82,5 +82,9 @@ collections:
               - { label: "Venue", name: "venue", widget: "string" }
               - { label: "Year", name: "year", widget: "string" }
               - { label: "Material", name: "medium", widget: "string", required: false }
+              - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
               - { label: "Description", name: "description", widget: "markdown", required: false, buttons: ["bold", "italic"], minimal: true }
-              - { label: "Image", name: "image", widget: "image", required: false }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                field: { label: "Image", name: "image", widget: "image" }

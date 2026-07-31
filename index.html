@@ -174,7 +174,7 @@ function buildAllSections(){
   const main = document.getElementById('main');
   let html = '';
 
-  const heroImg = SETTINGS.frontImage || (EXHIBITIONS[0] && EXHIBITIONS[0].image) || (ARTWORKS[0] && ARTWORKS[0].image) || '';
+  const heroImg = SETTINGS.frontImage || (EXHIBITIONS[0] && EXHIBITIONS[0].images && EXHIBITIONS[0].images[0]) || (ARTWORKS[0] && ARTWORKS[0].images && ARTWORKS[0].images[0]) || '';
   html += `<section id="page-home">
     <div class="home-centered">${heroImg ? `<img src="${esc(heroImg)}" alt="${esc(SETTINGS.artistName || '')}">` : ''}</div>
   </section>`;
@@ -194,7 +194,7 @@ function buildAllSections(){
   EXHIBITIONS.forEach(e => {
     const id = 'exhibition-' + slugify(e.title);
     html += `<div class="exh-entry">
-      <a href="#${id}" onclick="goTo('${id}')" class="exh-thumb">${e.image ? `<img src="${esc(e.image)}">` : ''}</a>
+      <a href="#${id}" onclick="goTo('${id}')" class="exh-thumb">${(e.images && e.images[0]) ? `<img src="${esc(e.images[0])}">` : ''}</a>
       <a class="raw-title" href="#${id}" onclick="goTo('${id}')">${mdInline(e.title)}</a>, ${esc(e.year)}, ${esc(e.venue)}
     </div>`;
   });
@@ -207,11 +207,11 @@ function buildAllSections(){
   }
   if(SETTINGS.education && SETTINGS.education.length){
     html += `<div class="cv-heading">Education</div>`;
-    SETTINGS.education.forEach(ed => { html += `<div class="cv-line">${esc(ed.year)} &mdash; ${esc(ed.detail)}</div>`; });
+    SETTINGS.education.forEach(ed => { html += `<div class="cv-line">${esc(ed.year)} &mdash; ${mdInline(ed.detail)}</div>`; });
   }
   if(SETTINGS.exhibitionsActivities && SETTINGS.exhibitionsActivities.length){
     html += `<div class="cv-heading">Exhibitions and Activities</div>`;
-    SETTINGS.exhibitionsActivities.forEach(ex => { html += `<div class="cv-line">${esc(ex.year)} &mdash; ${esc(ex.detail)}</div>`; });
+    SETTINGS.exhibitionsActivities.forEach(ex => { html += `<div class="cv-line">${esc(ex.year)} &mdash; ${mdInline(ex.detail)}</div>`; });
   }
   html += `</div></section>`;
 
@@ -220,10 +220,10 @@ function buildAllSections(){
     html += `<section id="page-${id}" class="hidden"><div class="detail-wrap">
       <p class="exh-detail-title">${mdInline(e.workTitle || e.title)}</p>
       <p class="exh-detail-line">${esc(e.year)}</p>
-      <p class="exh-detail-line">${esc(e.venue)}</p>
       ${e.medium ? `<p class="exh-detail-line">${esc(e.medium)}</p>` : ''}
+      ${e.dimensions ? `<p class="exh-detail-line">${esc(e.dimensions)}</p>` : ''}
       ${e.description ? mdBlock(e.description).replace('<p>','<p class="detail-desc">') : ''}
-      <div class="scroll-images">${e.image ? `<div class="scroll-img"><img src="${esc(e.image)}"></div>` : ''}</div>
+      <div class="scroll-images">${(e.images || []).map(src => `<div class="scroll-img"><img src="${esc(src)}"></div>`).join('')}</div>
       <a class="back-link" href="#exhibitions" onclick="goTo('exhibitions')">back to exhibitions</a>
     </div></section>`;
   });
