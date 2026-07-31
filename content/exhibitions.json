@@ -19,13 +19,11 @@
       "image": "/images/uploads/wall-piece.jpg"
     },
     {
-      "title": "Start´19",
-      "workTitle": "Metamorphosis in motion",
-      "venue": "The Sculpture Workshop of the The Danish National Museum",
-      "year": "2019",
-      "medium": "Dried rubber tree leaves, thread of silk and steel ",
-      "description": "Shown at the 2019 edition of the annual exhibition by Sculpture Network, at the sculpture workshop of the The Danish National Museum.",
-      "image": "/images/uploads/metamorfose_5.jpg"
+      "title": "Melange",
+      "workTitle": "Without any resistance they spin, they should all just spin, exposing the ground, quick turn in the air with your shoes on",
+      "venue": "Bergen Art Academy",
+      "year": "2022",
+      "medium": "Sound piece, nylon strap, bricks, paraffin wax and various found materials"
     },
     {
       "title": "Labyrinth",
@@ -46,11 +44,13 @@
       "description": "Duo project made together with Line Rolf, shown at Tag Team Studio and Galleri Flig."
     },
     {
-      "title": "Melange",
-      "workTitle": "Without any resistance they spin, they should all just spin, exposing the ground, quick turn in the air with your shoes on",
-      "venue": "Bergen Art Academy",
-      "year": "2022",
-      "medium": "Sound piece, nylon strap, bricks, paraffin wax and various found materials"
+      "title": "Start´19",
+      "workTitle": "Metamorphosis in motion",
+      "venue": "The Sculpture Workshop of the The Danish National Museum",
+      "year": "2019",
+      "medium": "Dried rubber tree leaves, thread of silk and steel ",
+      "description": "Shown at the 2019 edition of the annual Sculpture Network exhibition, at the sculpture workshop of The Danish National Museum.",
+      "image": "/images/uploads/metamorfose_5.jpg"
     }
   ]
 }
