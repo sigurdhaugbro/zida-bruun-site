@@ -191,9 +191,9 @@ function buildAllSections(){
     html += `<div class="cv-heading">Education</div>`;
     SETTINGS.education.forEach(ed => { html += `<div class="cv-line">${esc(ed.year)} &mdash; ${esc(ed.detail)}</div>`; });
   }
-  if(EXHIBITIONS.length){
-    html += `<div class="cv-heading">Selected Exhibitions</div>`;
-    EXHIBITIONS.forEach(e => { html += `<div class="cv-line">${esc(e.year)} &mdash; ${esc(e.title)}, ${esc(e.venue)}</div>`; });
+  if(SETTINGS.exhibitionsActivities && SETTINGS.exhibitionsActivities.length){
+    html += `<div class="cv-heading">Exhibitions and Activities</div>`;
+    SETTINGS.exhibitionsActivities.forEach(ex => { html += `<div class="cv-line">${esc(ex.year)} &mdash; ${esc(ex.detail)}</div>`; });
   }
   html += `</div></section>`;
 

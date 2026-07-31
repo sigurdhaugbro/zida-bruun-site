@@ -36,6 +36,13 @@ collections:
             fields:
               - { label: "Year", name: "year", widget: "string" }
               - { label: "Detail", name: "detail", widget: "string" }
+          - label: "Exhibitions and Activities"
+            name: "exhibitionsActivities"
+            widget: "list"
+            summary: "{{fields.year}} — {{fields.detail}}"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Detail", name: "detail", widget: "string" }
 
   - name: "artworks"
     label: "Selected Works"
