@@ -1,11 +1,269 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager — Zida Bruun</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zida Bruun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#111111; }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--ink);
+    -webkit-font-smoothing:antialiased; transition:background .2s;
+  }
+  body.page-home{ background:#FEF200; }
+  body.page-works, body.page-exhibitions, body.page-about,
+  body.page-exhibition-detail{ background:#FFFFFF; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+
+  header{
+    display:flex; align-items:baseline; justify-content:space-between;
+    padding:44px 52px 0; position:relative; z-index:5;
+  }
+  .wordmark{ font-family:Georgia, 'Times New Roman', serif; font-size:1.25rem; letter-spacing:0.01em; background:#FEF200; padding:3px 8px; display:inline-block; }
+  .wordmark:hover{ opacity:0.7; }
+  .brand-group{ display:flex; align-items:baseline; gap:12px; }
+  .back-arrow{ font-family:Georgia, 'Times New Roman', serif; font-size:1.15rem; }
+  .back-arrow:hover{ opacity:0.6; }
+  .back-arrow.invisible{ visibility:hidden; }
+  nav.full a{ font-family:Georgia, 'Times New Roman', serif; font-size:1rem; margin-left:2px; }
+  nav.full .sep{ margin:0 10px; opacity:0.5; }
+  nav.full a:hover{ text-decoration:underline; }
+  nav.single a{ font-family:Georgia, 'Times New Roman', serif; font-size:1rem; }
+
+  main{ padding:70px 52px 120px; min-height:70vh; }
+
+  /* HOME */
+  .home-centered{ display:flex; justify-content:center; align-items:flex-start; padding-top:60px; }
+  .home-centered img{ max-width:520px; width:100%; }
+
+  /* LISTS */
+  .raw-list{ max-width:640px; }
+  .raw-entry{ font-size:1.05rem; line-height:1.65; margin-bottom:4px; }
+  .exh-list a.raw-title{ font-weight:700; text-decoration:none; }
+
+  .exh-list{ max-width:640px; }
+  .exh-entry{ margin-bottom:64px; font-size:1.05rem; line-height:1.65; }
+  .exh-thumb{ display:block; max-width:340px; margin-bottom:14px; }
+  .exh-thumb img{ width:100%; }
+
+  /* SELECTED WORKS - centered continuous scroll */
+  .works-scroll{ max-width:640px; margin:0 auto; }
+  .work-entry{ margin-bottom:120px; text-align:center; }
+  .work-entry:last-child{ margin-bottom:0; }
+  .work-images{ display:flex; flex-direction:column; gap:24px; margin-bottom:24px; }
+  .work-img img{ width:100%; }
+  .work-title{ font-weight:700; font-size:1.05rem; margin:0 0 4px; }
+  .work-sub{ font-size:1rem; margin:0; }
+
+  /* ABOUT */
+  .about-wrap{ max-width:640px; margin:0 auto; }
+  .about-wrap p{ font-size:1.08rem; line-height:1.75; }
+  .cv-heading{ font-size:0.95rem; font-weight:600; margin:44px 0 14px; }
+  .cv-line{ font-size:1rem; line-height:1.7; }
+
+  /* CONTACT */
+  .contact-wrap{ max-width:640px; margin:0 auto; }
+  .contact-wrap .big-line{ font-size:1.4rem; margin:0 0 22px; }
+  .contact-wrap .big-line a{ text-decoration:underline; }
+  .contact-wrap .big-line a:hover{ opacity:0.7; }
+
+  /* DETAIL PAGES */
+  .detail-wrap{ max-width:640px; }
+  .detail-wrap .detail-img{ max-width:520px; margin-bottom:32px; }
+  .detail-wrap .detail-img img{ width:100%; }
+  .detail-wrap .detail-desc{ font-style:italic; font-size:1.05rem; line-height:1.75; margin-bottom:22px; }
+  .detail-wrap .detail-line{ font-style:italic; font-size:1rem; line-height:1.6; margin-bottom:26px; }
+  .exh-detail-title{ font-weight:700; font-size:1.2rem; margin:0 0 6px; }
+  .exh-detail-line{ font-size:1rem; margin:0 0 4px; }
+  .exh-detail-line:last-of-type{ margin-bottom:22px; }
+  .scroll-images{ display:flex; flex-direction:column; gap:36px; margin-top:36px; }
+  .scroll-img img{ width:100%; max-width:640px; }
+  .back-link{ text-decoration:underline; text-underline-offset:2px; font-size:1rem; }
+  .back-link:hover{ opacity:0.6; }
+
+  .hidden{ display:none; }
+  .loading-msg{ font-size:1rem; color:#666; }
+
+  @media (max-width:720px){
+    header{ padding:28px 24px 0; flex-direction:column; align-items:flex-start; gap:10px; }
+    main{ padding:44px 24px 90px; }
+    .exh-entry{ margin-bottom:44px; }
+  }
+</style>
 </head>
-<body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<body class="page-home">
+
+<header>
+  <div class="brand-group">
+    <a class="back-arrow invisible" id="back-arrow" href="#" onclick="goBack(); return false;">&#8592;</a>
+    <a class="wordmark" href="#home" onclick="goTo('home')">Zida Bruun</a>
+  </div>
+  <nav class="full" id="nav-full">
+    <a href="#exhibitions" onclick="goTo('exhibitions')">Exhibitions</a><span class="sep">|</span><a href="#works" onclick="goTo('works')">Selected works</a><span class="sep">|</span><a href="#about" onclick="goTo('about')">About</a><span class="sep">|</span><a href="mailto:zidabruun@protonmail.com">Contact</a>
+  </nav>
+  <nav class="single hidden" id="nav-single">
+    <a href="#" id="nav-single-link"></a>
+  </nav>
+</header>
+
+<main id="main">
+  <p class="loading-msg">Loading&hellip;</p>
+</main>
+
+<script>
+let SETTINGS = {};
+let ARTWORKS = [];
+let EXHIBITIONS = [];
+
+function esc(str){
+  if(!str) return '';
+  return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function slugify(str){
+  return String(str).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+}
+function fmtWithYear(medium, year){
+  return [year, medium].filter(Boolean).join(', ');
+}
+
+async function loadContent(){
+  try{
+    const [s, a, e] = await Promise.all([
+      fetch('/content/settings.json').then(r => r.json()),
+      fetch('/content/artworks.json').then(r => r.json()),
+      fetch('/content/exhibitions.json').then(r => r.json())
+    ]);
+    SETTINGS = s || {};
+    ARTWORKS = (a && a.items) || [];
+    EXHIBITIONS = (e && e.items) || [];
+  }catch(err){
+    document.getElementById('main').innerHTML = '<p class="loading-msg">Content could not be loaded.</p>';
+    return;
+  }
+  buildAllSections();
+  const initial = window.location.hash.replace('#','') || 'home';
+  goTo(isValidPage(initial) ? initial : 'home');
+}
+
+function isValidPage(page){
+  if(['home','works','exhibitions','about'].includes(page)) return true;
+  if(page.startsWith('exhibition-') && EXHIBITIONS.some(e => 'exhibition-' + slugify(e.title) === page)) return true;
+  return false;
+}
+
+function buildAllSections(){
+  const main = document.getElementById('main');
+  let html = '';
+
+  const heroImg = SETTINGS.frontImage || (EXHIBITIONS[0] && EXHIBITIONS[0].image) || (ARTWORKS[0] && ARTWORKS[0].image) || '';
+  html += `<section id="page-home">
+    <div class="home-centered">${heroImg ? `<img src="${esc(heroImg)}" alt="${esc(SETTINGS.artistName || '')}">` : ''}</div>
+  </section>`;
+
+  html += `<section id="page-works" class="hidden"><div class="works-scroll">`;
+  ARTWORKS.forEach(a => {
+    const imgs = (a.images && a.images.length) ? a.images : (a.image ? [a.image] : []);
+    html += `<div class="work-entry">
+      <div class="work-images">${imgs.map(src => `<div class="work-img"><img src="${esc(src)}"></div>`).join('')}</div>
+      <p class="work-title">${esc(a.title)}</p>
+      <p class="work-sub">${esc(fmtWithYear(a.medium, a.year))}</p>
+    </div>`;
+  });
+  html += `</div></section>`;
+
+  html += `<section id="page-exhibitions" class="hidden"><div class="exh-list">`;
+  EXHIBITIONS.forEach(e => {
+    const id = 'exhibition-' + slugify(e.title);
+    html += `<div class="exh-entry">
+      <a href="#${id}" onclick="goTo('${id}')" class="exh-thumb">${e.image ? `<img src="${esc(e.image)}">` : ''}</a>
+      <a class="raw-title" href="#${id}" onclick="goTo('${id}')">${esc(e.title)}</a>, ${esc(e.year)}, ${esc(e.venue)}
+    </div>`;
+  });
+  html += `</div></section>`;
+
+  html += `<section id="page-about" class="hidden"><div class="about-wrap">
+    <p>${esc(SETTINGS.bio)}</p>`;
+  if(SETTINGS.education && SETTINGS.education.length){
+    html += `<div class="cv-heading">Education</div>`;
+    SETTINGS.education.forEach(ed => { html += `<div class="cv-line">${esc(ed.year)} &mdash; ${esc(ed.detail)}</div>`; });
+  }
+  if(EXHIBITIONS.length){
+    html += `<div class="cv-heading">Selected Exhibitions</div>`;
+    EXHIBITIONS.forEach(e => { html += `<div class="cv-line">${esc(e.year)} &mdash; ${esc(e.title)}, ${esc(e.venue)}</div>`; });
+  }
+  html += `</div></section>`;
+
+  EXHIBITIONS.forEach(e => {
+    const id = 'exhibition-' + slugify(e.title);
+    html += `<section id="page-${id}" class="hidden"><div class="detail-wrap">
+      <p class="exh-detail-title">${esc(e.title)}</p>
+      <p class="exh-detail-line">${esc(e.year)}</p>
+      <p class="exh-detail-line">${esc(e.venue)}</p>
+      ${e.medium ? `<p class="exh-detail-line">${esc(e.medium)}</p>` : ''}
+      ${e.description ? `<p class="detail-desc">${esc(e.description)}</p>` : ''}
+      <div class="scroll-images">${e.image ? `<div class="scroll-img"><img src="${esc(e.image)}"></div>` : ''}</div>
+      <a class="back-link" href="#exhibitions" onclick="goTo('exhibitions')">back to exhibitions</a>
+    </div></section>`;
+  });
+
+  main.innerHTML = html;
+}
+
+const staticPageTitles = { works: 'Selected works', exhibitions: 'Exhibitions', about: 'About' };
+
+function pageTitleFor(page){
+  if(staticPageTitles[page]) return staticPageTitles[page];
+  if(page.startsWith('exhibition-')) return 'Exhibitions';
+  return '';
+}
+function bodyClassFor(page){
+  if(page === 'home') return 'page-home';
+  if(['works','exhibitions','about'].includes(page)) return 'page-' + page;
+  if(page.startsWith('exhibition-')) return 'page-exhibition-detail';
+  return 'page-home';
+}
+
+function goTo(page){
+  document.querySelectorAll('main > section').forEach(s => s.classList.add('hidden'));
+  const target = document.getElementById('page-' + page);
+  if(!target){ goTo('home'); return; }
+  target.classList.remove('hidden');
+  document.body.className = bodyClassFor(page);
+
+  const navFull = document.getElementById('nav-full');
+  const navSingle = document.getElementById('nav-single');
+  if(page === 'home'){
+    navFull.classList.remove('hidden');
+    navSingle.classList.add('hidden');
+  } else {
+    navFull.classList.add('hidden');
+    navSingle.classList.remove('hidden');
+    const link = document.getElementById('nav-single-link');
+    link.textContent = pageTitleFor(page);
+    const parentPage = page.startsWith('exhibition-') ? 'exhibitions' : page;
+    link.href = '#' + parentPage;
+    link.onclick = () => goTo(parentPage);
+  }
+
+  const backArrow = document.getElementById('back-arrow');
+  if(page === 'home'){ backArrow.classList.add('invisible'); }
+  else { backArrow.classList.remove('invisible'); }
+
+  window.location.hash = page;
+}
+
+function goBack(){
+  const page = window.location.hash.replace('#','');
+  if(page.startsWith('exhibition-')) goTo('exhibitions');
+  else goTo('home');
+}
+
+loadContent();
+</script>
+
 </body>
 </html>

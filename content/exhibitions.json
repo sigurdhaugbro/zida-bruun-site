@@ -1,6 +1,6 @@
 {
   "items": [
-    { "title": "Through the understanding of otters", "venue": "Kunstnernes Hus", "year": "2026", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "image": "/images/uploads/otters-installation.jpg" },
-    { "title": "Everybody should have at least one eye closed", "venue": "Pachinko", "year": "2025", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "image": "/images/uploads/wall-piece.jpg" }
+    { "title": "Through the understanding of otters", "venue": "Kunstnernes Hus", "year": "2026", "medium": "Plaster", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "image": "/images/uploads/otters-installation.jpg" },
+    { "title": "Everybody should have at least one eye closed", "venue": "Pachinko", "year": "2025", "medium": "Mixed media on panel", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "image": "/images/uploads/wall-piece.jpg" }
   ]
 }

@@ -27,6 +27,7 @@ collections:
         name: "settings"
         fields:
           - { label: "Artist Name", name: "artistName", widget: "string" }
+          - { label: "Front Page Image", name: "frontImage", widget: "image", required: false, hint: "Shown alone on the yellow homepage. If left empty, the most recent exhibition's photo is used instead." }
           - { label: "Bio", name: "bio", widget: "text" }
           - label: "Education"
             name: "education"
@@ -71,5 +72,6 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Venue", name: "venue", widget: "string" }
               - { label: "Year", name: "year", widget: "string" }
+              - { label: "Material", name: "medium", widget: "string", required: false }
               - { label: "Description", name: "description", widget: "text", required: false }
               - { label: "Image", name: "image", widget: "image", required: false }
