@@ -1,7 +1,7 @@
 {
   "items": [
-    { "title": "Untitled I", "year": "2026", "medium": "Plaster, dimensions variable", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "image": "/images/uploads/otters-installation.jpg" },
-    { "title": "Untitled II", "year": "2025", "medium": "Mixed media on panel, 120 × 240 cm", "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.", "image": "/images/uploads/wall-piece.jpg" },
-    { "title": "Untitled III", "year": "2025", "medium": "Plaster, dimensions variable", "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse.", "image": "/images/uploads/otters-installation.jpg" }
+    { "title": "Untitled I", "year": "2026", "medium": "Plaster, dimensions variable", "images": ["/images/uploads/otters-installation.jpg", "/images/uploads/wall-piece.jpg"] },
+    { "title": "Untitled II", "year": "2025", "medium": "Mixed media on panel, 120 × 240 cm", "images": ["/images/uploads/wall-piece.jpg"] },
+    { "title": "Untitled III", "year": "2025", "medium": "Plaster, dimensions variable", "images": ["/images/uploads/otters-installation.jpg", "/images/uploads/wall-piece.jpg"] }
   ]
 }

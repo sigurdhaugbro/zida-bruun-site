@@ -15,7 +15,7 @@
   }
   body.page-home{ background:#FEF200; }
   body.page-works, body.page-exhibitions, body.page-about,
-  body.page-work-detail, body.page-exhibition-detail{ background:#FFFFFF; }
+  body.page-exhibition-detail{ background:#FFFFFF; }
   a{ color:inherit; text-decoration:none; }
   img{ max-width:100%; display:block; }
 
@@ -28,6 +28,7 @@
   .brand-group{ display:flex; align-items:baseline; gap:12px; }
   .back-arrow{ font-family:Georgia, 'Times New Roman', serif; font-size:1.15rem; }
   .back-arrow:hover{ opacity:0.6; }
+  .back-arrow.invisible{ visibility:hidden; }
   nav.full a{ font-family:Georgia, 'Times New Roman', serif; font-size:1rem; margin-left:2px; }
   nav.full .sep{ margin:0 10px; opacity:0.5; }
   nav.full a:hover{ text-decoration:underline; }
@@ -42,12 +43,21 @@
   /* LISTS */
   .raw-list{ max-width:640px; }
   .raw-entry{ font-size:1.05rem; line-height:1.65; margin-bottom:4px; }
-  .raw-entry .raw-title, a.raw-title{ text-decoration:underline; text-underline-offset:2px; }
+  .exh-list a.raw-title{ font-weight:700; text-decoration:none; }
 
   .exh-list{ max-width:640px; }
   .exh-entry{ margin-bottom:64px; font-size:1.05rem; line-height:1.65; }
   .exh-thumb{ display:block; max-width:340px; margin-bottom:14px; }
   .exh-thumb img{ width:100%; }
+
+  /* SELECTED WORKS - centered continuous scroll */
+  .works-scroll{ max-width:640px; margin:0 auto; }
+  .work-entry{ margin-bottom:120px; text-align:center; }
+  .work-entry:last-child{ margin-bottom:0; }
+  .work-images{ display:flex; flex-direction:column; gap:24px; margin-bottom:24px; }
+  .work-img img{ width:100%; }
+  .work-title{ font-weight:700; font-size:1.05rem; margin:0 0 4px; }
+  .work-sub{ font-size:1rem; margin:0; }
 
   /* ABOUT */
   .about-wrap{ max-width:640px; margin:0 auto; }
@@ -88,7 +98,7 @@
 
 <header>
   <div class="brand-group">
-    <a class="back-arrow hidden" id="back-arrow" href="#" onclick="goBack(); return false;">&#8592;</a>
+    <a class="back-arrow invisible" id="back-arrow" href="#" onclick="goBack(); return false;">&#8592;</a>
     <a class="wordmark" href="#home" onclick="goTo('home')">Zida Bruun</a>
   </div>
   <nav class="full" id="nav-full">
@@ -140,7 +150,6 @@ async function loadContent(){
 
 function isValidPage(page){
   if(['home','works','exhibitions','about'].includes(page)) return true;
-  if(page.startsWith('work-') && ARTWORKS.some(a => 'work-' + slugify(a.title) === page)) return true;
   if(page.startsWith('exhibition-') && EXHIBITIONS.some(e => 'exhibition-' + slugify(e.title) === page)) return true;
   return false;
 }
@@ -154,10 +163,14 @@ function buildAllSections(){
     <div class="home-centered">${heroImg ? `<img src="${esc(heroImg)}" alt="${esc(SETTINGS.artistName || '')}">` : ''}</div>
   </section>`;
 
-  html += `<section id="page-works" class="hidden"><div class="raw-list">`;
+  html += `<section id="page-works" class="hidden"><div class="works-scroll">`;
   ARTWORKS.forEach(a => {
-    const id = 'work-' + slugify(a.title);
-    html += `<div class="raw-entry"><a class="raw-title" href="#${id}" onclick="goTo('${id}')">${esc(a.title)}</a>, ${esc(fmtWithYear(a.medium, a.year))}</div>`;
+    const imgs = (a.images && a.images.length) ? a.images : (a.image ? [a.image] : []);
+    html += `<div class="work-entry">
+      <div class="work-images">${imgs.map(src => `<div class="work-img"><img src="${esc(src)}"></div>`).join('')}</div>
+      <p class="work-title">${esc(a.title)}</p>
+      <p class="work-sub">${esc(fmtWithYear(a.medium, a.year))}</p>
+    </div>`;
   });
   html += `</div></section>`;
 
@@ -183,16 +196,6 @@ function buildAllSections(){
   }
   html += `</div></section>`;
 
-  ARTWORKS.forEach(a => {
-    const id = 'work-' + slugify(a.title);
-    html += `<section id="page-${id}" class="hidden"><div class="detail-wrap">
-      ${a.image ? `<div class="detail-img"><img src="${esc(a.image)}"></div>` : ''}
-      ${a.description ? `<p class="detail-desc">${esc(a.description)}</p>` : ''}
-      <p class="detail-line"><em>${esc(a.title)}</em> (${esc(a.year)}), ${esc(a.medium)}</p>
-      <a class="back-link" href="#works" onclick="goTo('works')">back to works</a>
-    </div></section>`;
-  });
-
   EXHIBITIONS.forEach(e => {
     const id = 'exhibition-' + slugify(e.title);
     html += `<section id="page-${id}" class="hidden"><div class="detail-wrap">
@@ -211,14 +214,12 @@ const staticPageTitles = { works: 'Selected works', exhibitions: 'Exhibitions', 
 
 function pageTitleFor(page){
   if(staticPageTitles[page]) return staticPageTitles[page];
-  if(page.startsWith('work-')) return 'Selected works';
   if(page.startsWith('exhibition-')) return 'Exhibitions';
   return '';
 }
 function bodyClassFor(page){
   if(page === 'home') return 'page-home';
   if(['works','exhibitions','about'].includes(page)) return 'page-' + page;
-  if(page.startsWith('work-')) return 'page-work-detail';
   if(page.startsWith('exhibition-')) return 'page-exhibition-detail';
   return 'page-home';
 }
@@ -240,22 +241,21 @@ function goTo(page){
     navSingle.classList.remove('hidden');
     const link = document.getElementById('nav-single-link');
     link.textContent = pageTitleFor(page);
-    const parentPage = page.startsWith('work-') ? 'works' : page.startsWith('exhibition-') ? 'exhibitions' : page;
+    const parentPage = page.startsWith('exhibition-') ? 'exhibitions' : page;
     link.href = '#' + parentPage;
     link.onclick = () => goTo(parentPage);
   }
 
   const backArrow = document.getElementById('back-arrow');
-  if(page === 'home'){ backArrow.classList.add('hidden'); }
-  else { backArrow.classList.remove('hidden'); }
+  if(page === 'home'){ backArrow.classList.add('invisible'); }
+  else { backArrow.classList.remove('invisible'); }
 
   window.location.hash = page;
 }
 
 function goBack(){
   const page = window.location.hash.replace('#','');
-  if(page.startsWith('work-')) goTo('works');
-  else if(page.startsWith('exhibition-')) goTo('exhibitions');
+  if(page.startsWith('exhibition-')) goTo('exhibitions');
   else goTo('home');
 }
 
