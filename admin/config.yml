@@ -29,6 +29,7 @@ collections:
           - { label: "Artist Name", name: "artistName", widget: "string" }
           - { label: "Front Page Image", name: "frontImage", widget: "image", required: false, hint: "Shown alone on the yellow homepage. If left empty, the most recent exhibition's photo is used instead." }
           - { label: "Bio", name: "bio", widget: "text" }
+          - { label: "About", name: "aboutText", widget: "text", required: false, hint: "Shown between Bio and Education on the About page." }
           - label: "Education"
             name: "education"
             widget: "list"
@@ -76,7 +77,8 @@ collections:
             widget: "list"
             summary: "{{fields.title}}"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Exhibition Title", name: "title", widget: "string", hint: "Shown in the Exhibitions overview list, e.g. the group show's name." }
+              - { label: "Work Title", name: "workTitle", widget: "string", required: false, hint: "Shown on the individual page when you click in — the title of the piece you made for this show. If left empty, Exhibition Title is used instead." }
               - { label: "Venue", name: "venue", widget: "string" }
               - { label: "Year", name: "year", widget: "string" }
               - { label: "Material", name: "medium", widget: "string", required: false }

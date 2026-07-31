@@ -61,10 +61,10 @@
   .work-sub{ font-size:1rem; margin:0; }
 
   /* ABOUT */
-  .about-wrap{ max-width:640px; margin:0 auto; }
-  .about-wrap p{ font-size:1.08rem; line-height:1.75; }
-  .cv-heading{ font-size:0.95rem; font-weight:600; margin:44px 0 14px; }
-  .cv-line{ font-size:1rem; line-height:1.7; }
+  .about-wrap{ max-width:640px; }
+  .about-wrap p{ font-size:0.95rem; line-height:1.7; }
+  .cv-heading{ font-size:0.9rem; font-weight:600; font-style:italic; margin:40px 0 14px; }
+  .cv-line{ font-size:0.92rem; line-height:1.65; }
 
   /* CONTACT */
   .contact-wrap{ max-width:640px; margin:0 auto; }
@@ -181,16 +181,16 @@ function buildAllSections(){
     const id = 'exhibition-' + slugify(e.title);
     html += `<div class="exh-entry">
       <a href="#${id}" onclick="goTo('${id}')" class="exh-thumb">${e.image ? `<img src="${esc(e.image)}">` : ''}</a>
-      <a class="raw-title" href="#${id}" onclick="goTo('${id}')">${esc(e.title)}</a>
-      <div class="exh-entry-line">${esc(e.year)}</div>
-      <div class="exh-entry-line">${esc(e.venue)}</div>
-      ${e.medium ? `<div class="exh-entry-line">${esc(e.medium)}</div>` : ''}
+      <a class="raw-title" href="#${id}" onclick="goTo('${id}')">${esc(e.title)}</a>, ${esc(e.year)}, ${esc(e.venue)}
     </div>`;
   });
   html += `</div></section>`;
 
   html += `<section id="page-about" class="hidden"><div class="about-wrap">
     <p>${esc(SETTINGS.bio)}</p>`;
+  if(SETTINGS.aboutText){
+    html += `<div class="cv-heading">About</div><p>${esc(SETTINGS.aboutText)}</p>`;
+  }
   if(SETTINGS.education && SETTINGS.education.length){
     html += `<div class="cv-heading">Education</div>`;
     SETTINGS.education.forEach(ed => { html += `<div class="cv-line">${esc(ed.year)} &mdash; ${esc(ed.detail)}</div>`; });
@@ -204,7 +204,7 @@ function buildAllSections(){
   EXHIBITIONS.forEach(e => {
     const id = 'exhibition-' + slugify(e.title);
     html += `<section id="page-${id}" class="hidden"><div class="detail-wrap">
-      <p class="exh-detail-title">${esc(e.title)}</p>
+      <p class="exh-detail-title">${esc(e.workTitle || e.title)}</p>
       <p class="exh-detail-line">${esc(e.year)}</p>
       <p class="exh-detail-line">${esc(e.venue)}</p>
       ${e.medium ? `<p class="exh-detail-line">${esc(e.medium)}</p>` : ''}
