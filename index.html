@@ -49,6 +49,7 @@
   .exh-entry{ margin-bottom:64px; font-size:1.05rem; line-height:1.65; }
   .exh-thumb{ display:block; max-width:340px; margin-bottom:14px; }
   .exh-thumb img{ width:100%; }
+  .exh-entry-line{ font-size:1rem; line-height:1.5; }
 
   /* SELECTED WORKS - centered continuous scroll */
   .works-scroll{ max-width:640px; margin:0 auto; }
@@ -180,7 +181,10 @@ function buildAllSections(){
     const id = 'exhibition-' + slugify(e.title);
     html += `<div class="exh-entry">
       <a href="#${id}" onclick="goTo('${id}')" class="exh-thumb">${e.image ? `<img src="${esc(e.image)}">` : ''}</a>
-      <a class="raw-title" href="#${id}" onclick="goTo('${id}')">${esc(e.title)}</a>, ${esc(e.year)}, ${esc(e.venue)}
+      <a class="raw-title" href="#${id}" onclick="goTo('${id}')">${esc(e.title)}</a>
+      <div class="exh-entry-line">${esc(e.year)}</div>
+      <div class="exh-entry-line">${esc(e.venue)}</div>
+      ${e.medium ? `<div class="exh-entry-line">${esc(e.medium)}</div>` : ''}
     </div>`;
   });
   html += `</div></section>`;
