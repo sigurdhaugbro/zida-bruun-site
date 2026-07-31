@@ -19,6 +19,21 @@
       "image": "/images/uploads/wall-piece.jpg"
     },
     {
+      "title": "Efterglød",
+      "workTitle": "Etna",
+      "venue": "Sydhavn Theater and S:TART",
+      "year": "2023"
+    },
+    {
+      "title": "19:00 ON TIME",
+      "workTitle": "Only the association remains",
+      "venue": "Bergen Bygarage",
+      "medium": "Chalk, extracts from personal diary, Iphone notes etc.",
+      "year": "2022",
+      "description": "Text work as part of the performance event 19:00 ON TIME made together with Line Rolf, Lukas Moland and Steinar Brovold Hauge at the top floor of the parking house Bergen Bygarage.\\\n\\\nAs the event was determined by the boundaries of a parking lot as a public gray zone, the text pieces written with chalk would stay for as long it would take for rain and cars to rub it away.",
+      "image": "/images/uploads/vlcsnap-00002-3.png"
+    },
+    {
       "title": "Melange",
       "workTitle": "Without any resistance they spin, they should all just spin, exposing the ground, quick turn in the air with your shoes on",
       "venue": "Bergen Art Academy",
@@ -50,17 +65,8 @@
       "venue": "The Sculpture Workshop of the The Danish National Museum",
       "year": "2019",
       "medium": "Dried rubber tree leaves, thread of silk and steel ",
-      "description": "Part of the Bachelor Graduation show at Bergen Art Academy.",
+      "description": "Part of the group show Efterglød, an annual exhibition by Sydhavn Theater and ST:ART, showing video works in public spaces around the neighborhood of Sydhavn, Copenhagen. \\\nThe video is made of footage recorded on a trip to the volcano Etna in Siciliy, displaying the dust clouds made from tourists walking down its one side.",
       "image": "/images/uploads/metamorfose_5.jpg"
-    },
-    {
-      "title": "19:00 ON TIME",
-      "workTitle": "Only the association remains",
-      "venue": "Bergen Bygarage",
-      "medium": "Chalk, extracts from personal diary, Iphone notes etc.",
-      "year": "2022",
-      "description": "Text work as part of the performance event 19:00 ON TIME made together with Line Rolf, Lukas Moland and Steinar Brovold Hauge at the top floor of the parking house Bergen Bygarage.\\\n\\\nAs the event was determined by the boundaries of a parking lot as a public gray zone, the text pieces written with chalk would stay for as long it would take for rain and cars to rub it away.",
-      "image": "/images/uploads/vlcsnap-00002-3.png"
     }
   ]
 }
