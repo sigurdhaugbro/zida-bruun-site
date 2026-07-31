@@ -17,6 +17,15 @@
       "medium": "Mixed media on panel",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "image": "/images/uploads/wall-piece.jpg"
+    },
+    {
+      "title": "dd",
+      "workTitle": "dd",
+      "venue": "dd",
+      "year": "dd",
+      "medium": "dd",
+      "description": "dd",
+      "image": "/images/uploads/metamorfose_5.jpg"
     }
   ]
 }
