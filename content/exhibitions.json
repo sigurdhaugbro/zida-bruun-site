@@ -8,7 +8,9 @@
       "medium": "18 concrete casts of a taxidermied otter",
       "dimensions": "",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "images": ["/images/uploads/otters-installation.jpg"]
+      "images": [
+        "/images/uploads/otters-installation.jpg"
+      ]
     },
     {
       "title": "Everybody should have at least one eye closed",
@@ -18,7 +20,9 @@
       "medium": "Mixed media on panel",
       "dimensions": "",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "images": ["/images/uploads/wall-piece.jpg"]
+      "images": [
+        "/images/uploads/wall-piece.jpg"
+      ]
     },
     {
       "title": "Start´19",
@@ -27,8 +31,10 @@
       "year": "2019",
       "medium": "Dried rubber tree leaves, thread of silk and steel ",
       "dimensions": "",
-      "description": "Shown at the 2019 edition of the annual exhibition by Sculpture Network, at the sculpture workshop of the The Danish National Museum.",
-      "images": ["/images/uploads/metamorfose_5.jpg"]
+      "description": "Shown at the 2019 edition of the annual Sculpture Network exhibition, at the sculpture workshop of The Danish National Museum.",
+      "images": [
+        "/images/uploads/metamorfose_5.jpg"
+      ]
     },
     {
       "title": "Labyrinth",
@@ -38,7 +44,9 @@
       "medium": "Digital print on paper",
       "dimensions": "",
       "description": "Part of the annual exhibition at Bergen Art Academy",
-      "images": ["/images/uploads/stairwaytle-8.jpg"]
+      "images": [
+        "/images/uploads/stairwaytle-8.jpg"
+      ]
     },
     {
       "title": "*It’s lying there along with the tree, maybe we’ll see him later*",
@@ -48,7 +56,9 @@
       "medium": "Various concrete types, charcoal on paper, construction wood, construction foil, water and leaves from fountains in Bergen",
       "dimensions": "",
       "description": "Duo project made together with Line Rolf, shown at Tag Team Studio and Galleri Flig.",
-      "images": ["/images/uploads/tbr_tag-team_galleri-flig_21.jpg"]
+      "images": [
+        "/images/uploads/tbr_tag-team_galleri-flig_21.jpg"
+      ]
     },
     {
       "title": "Melange",
