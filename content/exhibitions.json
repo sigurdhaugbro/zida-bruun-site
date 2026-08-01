@@ -110,15 +110,17 @@
       "image": "/images/uploads/vlcsnap-00002-3.png"
     },
     {
-      "title": "Melange",
       "workTitle": "Without any resistance they spin, they should all just spin, exposing the ground, quick turn in the air with your shoes on",
+      "dimensions": "",
       "venue": "Bergen Art Academy",
-      "year": "2022",
       "medium": "Sound piece, nylon strap, bricks, paraffin wax and various found materials",
-      "image": "/images/uploads/still.jpg",
+      "title": "Melange",
       "images": [
         "/images/uploads/still.jpg"
-      ]
+      ],
+      "image": "/images/uploads/still.jpg",
+      "description": "Part of the bachelor graduation exhibition at Bergen Art Academy. The work consists of a sculptural installation and a sound piece exhibited inside an elevator.",
+      "year": "2022"
     },
     {
       "workTitle": "Please Land Somewhere Else",
