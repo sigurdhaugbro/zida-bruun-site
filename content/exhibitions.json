@@ -86,9 +86,10 @@
       "workTitle": "Please Land Somewhere Else",
       "venue": "Bergen Art Academy",
       "year": "2021",
-      "medium": "Digital print on paper, 4 of 1 x 1 m.",
+      "medium": "Digital print on paper",
       "image": "/images/uploads/stairwaytle-8.jpg",
-      "description": "Part of the annual exhibition at Bergen Art Academy"
+      "description": "Part of the annual exhibition at Bergen Art Academy",
+      "dimensions": "4 of 1 x 1 m."
     },
     {
       "title": "*It’s lying there along with the tree, maybe we’ll see him later*",
@@ -97,16 +98,21 @@
       "year": "2021",
       "image": "/images/uploads/tbr_tag-team_galleri-flig_21.jpg",
       "medium": "Various concrete types, charcoal on paper, construction wood, construction foil, water and leaves from fountains in Bergen",
-      "description": "Duo project made together with Line Rolf, exhibited at Tag Team Studio and Galleri Flig.\\\n\\\nThe project explores the elements that define the cityscape and how ordinary urban objects gradually become part of its visual and cultural landscape. Based on recordings of shadows found around in the city of Bergen, the works imagines new forms and narratives for city monuments. The works consists of an outdoor sculptural video screening alongside an installation of concrete casted reliefs of the silhouettes of parked and crashed electric scooters."
+      "description": "Duo project made together with Line Rolf, exhibited at Tag Team Studio and Galleri Flig.\\\n\\\nThe project explores the elements that define the cityscape and how ordinary urban objects gradually become part of its visual and cultural landscape. Based on recordings of shadows found around in the city of Bergen, the works imagines new forms and narratives for city monuments. The works consists of an outdoor sculptural video screening alongside an installation of concrete casted reliefs of the silhouettes of parked and crashed electric scooters.",
+      "dimensions": "Various dimensions"
     },
     {
-      "title": "Start´19",
       "workTitle": "Metamorphosis in motion",
+      "dimensions": "36 x 28 cm.",
       "venue": "The Sculpture Workshop of the The Danish National Museum",
-      "year": "2019",
-      "medium": "Dried rubber tree leaves, thread of silk and steel, 36 x 28 cm.",
-      "description": "Exhibited at Kunstnernes Efterårsudstilling KE25 at Den Frie, Copenhagen. \\\nPhotos by",
-      "image": "/images/uploads/metamorfose_5.jpg"
+      "medium": "Dried rubber tree leaves, thread of silk and steel",
+      "title": "Start´19",
+      "images": [
+        "/images/uploads/metamorfose_5.jpg"
+      ],
+      "image": "/images/uploads/metamorfose_5.jpg",
+      "description": "Part of the 2019 edition of the annual Sculpture Network meeting, held at the sculpture workshop of The Danish National Museum.",
+      "year": "2019"
     }
   ]
 }
