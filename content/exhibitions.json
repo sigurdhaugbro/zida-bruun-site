@@ -79,27 +79,36 @@
       "venue": "Bergen Art Academy",
       "year": "2022",
       "medium": "Sound piece, nylon strap, bricks, paraffin wax and various found materials",
-      "image": "/images/uploads/still.jpg"
+      "image": "/images/uploads/still.jpg",
+      "images": [
+        "/images/uploads/still.jpg"
+      ]
     },
     {
-      "title": "Labyrinth",
       "workTitle": "Please Land Somewhere Else",
+      "dimensions": "4 of 1 x 1 m.",
       "venue": "Bergen Art Academy",
-      "year": "2021",
       "medium": "Digital print on paper",
+      "title": "Labyrinth",
+      "images": [
+        "/images/uploads/stairwaytle-8.jpg"
+      ],
       "image": "/images/uploads/stairwaytle-8.jpg",
       "description": "Part of the annual exhibition at Bergen Art Academy",
-      "dimensions": "4 of 1 x 1 m."
+      "year": "2021"
     },
     {
-      "title": "*It’s lying there along with the tree, maybe we’ll see him later*",
       "workTitle": "*It’s lying there along with the tree, maybe we’ll see him later*",
+      "dimensions": "Various dimensions",
       "venue": "Tag Team Studio and Galleri Flig",
-      "year": "2021",
-      "image": "/images/uploads/tbr_tag-team_galleri-flig_21.jpg",
       "medium": "Various concrete types, charcoal on paper, construction wood, construction foil, water and leaves from fountains in Bergen",
+      "title": "*It’s lying there along with the tree, maybe we’ll see him later*",
+      "images": [
+        "/images/uploads/tbr_tag-team_galleri-flig_21.jpg"
+      ],
+      "image": "/images/uploads/tbr_tag-team_galleri-flig_21.jpg",
       "description": "Duo project made together with Line Rolf, exhibited at Tag Team Studio and Galleri Flig.\\\n\\\nThe project explores the elements that define the cityscape and how ordinary urban objects gradually become part of its visual and cultural landscape. Based on recordings of shadows found around in the city of Bergen, the works imagines new forms and narratives for city monuments. The works consists of an outdoor sculptural video screening alongside an installation of concrete casted reliefs of the silhouettes of parked and crashed electric scooters.",
-      "dimensions": "Various dimensions"
+      "year": "2021"
     },
     {
       "workTitle": "Metamorphosis in motion",
