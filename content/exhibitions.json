@@ -54,7 +54,14 @@
       "year": "2025",
       "medium": "Construction wood, LED candlelights with flickering flame, pre-owned; frosted glass, window blinds, wooden paneling",
       "description": "Exhibited at Kunstnernes Efterårsudstilling KE25 at Den Frie, Copenhagen.",
-      "dimensions": "2 of 77 x 67 x 14 cm."
+      "dimensions": "2 of 77 x 67 x 14 cm.",
+      "images": [
+        "/images/uploads/zida-bruun_01_ke25.jpg",
+        "/images/uploads/zida-bruun_02_ke25.jpg",
+        "/images/uploads/zida-bruun_04_ke25.jpg",
+        "/images/uploads/dscf6208_red.jpg",
+        "/images/uploads/interior_ke25_7.jpg"
+      ]
     },
     {
       "title": "Bliss (blinds)",
