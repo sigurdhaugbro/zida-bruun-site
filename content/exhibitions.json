@@ -46,18 +46,23 @@
       "title": "Summer Crush",
       "venue": "Arden Asbæk",
       "year": "2023",
-      "medium": "Laserprint, lacquer on pocket mirror, 5 x 6 x 5 cm",
+      "medium": "Laserprint, lacquer on pocket mirror",
       "workTitle": "Pocket dream repairing the moment",
-      "description": "Part of the annual summer exhibition at Arden Asbæk, Copenhagen, revolving around broken love.\\\nPocket dream repairing the moment explores the mirror as an intimate space abandoned by the body."
+      "description": "Part of the annual summer exhibition at Arden Asbæk, Copenhagen, revolving around broken love.\\\nPocket dream repairing the moment explores the mirror as an intimate space abandoned by the body.",
+      "dimensions": "5 x 6 x 5 cm"
     },
     {
-      "title": "Efterglød",
       "workTitle": "Mount Etna",
+      "dimensions": "Duration 24:50 sek.",
       "venue": "Sydhavn Theater and S:TART",
-      "year": "2023",
-      "medium": "Looping video, duration 24:50 sek.",
+      "medium": "Looping video",
+      "title": "Efterglød",
+      "images": [
+        "/images/uploads/4w.black.jpg"
+      ],
       "image": "/images/uploads/4w.black.jpg",
-      "description": "Part of the group exhibition Efterglød - an annual exhibition by Sydhavn Theater and ST:ART, presenting video works in public spaces throughout the neighborhood of Sydhavn, Copenhagen. \nMount Etna is based on text fragments and footage recorded during a trip to the volcano in Siciliy. As tourists walk down the slope, creating clouds of dust, a heat wave causes thousands of ladybugs to fly up the volcano, only to become trapped with nothing to eat. Meanwhile, a forest fire delays airplanes from taking off."
+      "description": "Part of the group exhibition Efterglød - an annual exhibition by Sydhavn Theater and ST:ART, presenting video works in public spaces throughout the neighborhood of Sydhavn, Copenhagen. \nMount Etna is based on text fragments and footage recorded during a trip to the volcano in Siciliy. As tourists walk down the slope, creating clouds of dust, a heat wave causes thousands of ladybugs to fly up the volcano, only to become trapped with nothing to eat. Meanwhile, a forest fire delays airplanes from taking off.",
+      "year": "2023"
     },
     {
       "title": "19:00 ON TIME",
