@@ -27,6 +27,14 @@
         "/images/uploads/totalrettet.jpg",
         "/images/uploads/close2rettet.jpg"
       ]
+    },
+    {
+      "title": "dd",
+      "year": "dd",
+      "medium": "dd",
+      "images": [
+        "/images/uploads/dsc_5586.jpg"
+      ]
     }
   ]
 }
